@@ -10,7 +10,7 @@ screen = lib.display.landscape()
 screen.writeToCenter("loading...")
 server = lib.server
 # server.startServer(screen) # testing fun html server
-timeIsSet = True#server.syncTime(screen)
+timeIsSet = server.syncTime(screen)
 
 # some functions
 def timeMins(time):
