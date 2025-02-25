@@ -10,7 +10,7 @@ screen = lib.display.landscape()
 screen.writeToCenter("loading...")
 server = lib.server
 # server.startServer(screen) # testing fun html server
-timeIsSet = server.syncTime(screen)
+timeIsSet = True#server.syncTime(screen)
 
 # some functions
 def timeMins(time):
@@ -86,10 +86,11 @@ else:
         screen.fill_rect(0, 0, screen.height, 30, fg)
         
         period = 3
-        hours = list(range(-24, 49, period))  # cover day-1, today, day+1 (24+24+24 +1 hr)
+        hours = list(range(-24, 49, period)) # 3 days in hrs with period
         tickWidth = int(screen.height / 24 * period)
         timelineOffset = ((minNow % (period * 60)) / (period * 60)) * tickWidth
-        xPos = int((-screen.height * 1.5) + ((minOffset) * ratio) - timelineOffset - 12) # -12 aprox size of %NN
+        centerOffset = (screen.height // 2) % tickWidth
+        xPos = int((-screen.height * 1.5) + ((minOffset) * ratio) - 2 * timelineOffset - 6) # 6px per char center for %NN
         for hour in hours:
             screen.text(f"{(hour % 24):02}", xPos, 14, bg)
             xPos += tickWidth
