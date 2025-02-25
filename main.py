@@ -88,7 +88,8 @@ else:
         period = 3
         hours = list(range(-24, 49, period))  # cover day-1, today, day+1 (24+24+24 +1 hr)
         tickWidth = int(screen.height / 24 * period)
-        xPos = int((-screen.height * 1.5) + (minOffset * ratio))
+        timelineOffset = ((minNow % (period * 60)) / (period * 60)) * tickWidth
+        xPos = int((-screen.height * 1.5) + ((minOffset) * ratio) - timelineOffset - 12) # -12 aprox size of %NN
         for hour in hours:
             screen.text(f"{(hour % 24):02}", xPos, 14, bg)
             xPos += tickWidth
@@ -130,4 +131,3 @@ else:
 
         gc.collect()
         time.sleep(1 * 60)
-
