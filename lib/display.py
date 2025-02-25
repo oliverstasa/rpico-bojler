@@ -1,5 +1,6 @@
 # original file Pico_ePaper-2.13_V3.py by waveshare from git
-# eddited for my purpouses
+# shortened and edited for my purpouses
+# https://github.com/waveshareteam/Pico_ePaper_Code/blob/main/python/Pico_ePaper-2.13_V3.py
 
 from machine import Pin, SPI
 import framebuf
