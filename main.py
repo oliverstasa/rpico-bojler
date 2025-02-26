@@ -36,13 +36,13 @@ else:
         screen.fill(bg)
         
         scheduleWeekday = [
-            {'start': "00:30", 'stop': "05:30"},
-            {'start': "12:30", 'stop': "15:30"}
+            {'start': "00:42", 'stop': "05:42"},
+            {'start': "12:38", 'stop': "15:38"}
         ]
         
         scheduleSaturday = [
-            {'start': "02:30", 'stop': "05:30"},
-            {'start': "12:30", 'stop': "17:30"}
+            {'start': "02:42", 'stop': "05:42"},
+            {'start': "12:38", 'stop': "17:38"}
         ]
         
         scheduleSunday = [
